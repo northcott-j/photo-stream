@@ -20,6 +20,10 @@
 	<a class="open" href="{{ slug | relative_url  }}" data-target="{{ slug }}">Open</a>
 	<a class="close" href="{{ '/' | relative_url }}">Close</a>
 
+  <a href="{{ safe_name | processed_path: 'large' }}" target="_blank" class="download" title="Download this photo">
+    <span>Download</span>
+  </a>
+
     {% unless forloop.first %}
     	{% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
     	<a href="{{ previous_slug | relative_url }}" data-target="{{ previous_slug }}" class="previous" title="Go to previous photo">
